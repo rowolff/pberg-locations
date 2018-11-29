@@ -38,7 +38,11 @@ function make(_children) {
                               onChange: (function ($$event) {
                                   return Curry._1(self[/* send */3], /* Search */[$$event.target.value]);
                                 })
-                            }), React.createElement("ul", undefined, Belt_Array.map($$Array.of_list(filteredPlaces), (function (place) {
+                            }), React.createElement("button", {
+                              onClick: (function (_e) {
+                                  return Curry._1(self[/* send */3], /* Reset */0);
+                                })
+                            }, "x"), React.createElement("ul", undefined, Belt_Array.map($$Array.of_list(filteredPlaces), (function (place) {
                                     var match = place[/* image */3][/* attributionUrl */2];
                                     return React.createElement("li", {
                                                 key: place[/* id */0]

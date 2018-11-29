@@ -32,6 +32,7 @@ let make = _children => {
         }
         placeholder="search here"
       />
+      <button onClick={_e => self.send(Reset)}> "x"->s </button>
       <ul>
         {
           filteredPlaces
