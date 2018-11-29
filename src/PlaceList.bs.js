@@ -3,11 +3,12 @@
 
 var $$Array = require("bs-platform/lib/js/array.js");
 var React = require("react");
-var Belt_List = require("bs-platform/lib/js/belt_List.js");
+var Belt_Array = require("bs-platform/lib/js/belt_Array.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 var Data$ReactTemplate = require("./Data.bs.js");
+var Phone$ReactTemplate = require("./Phone.bs.js");
 
-var component = ReasonReact.statelessComponent("PlaceList");
+var component = ReasonReact.statelessComponent("PlaceList-ReactTemplate");
 
 function s(prim) {
   return prim;
@@ -25,11 +26,17 @@ function make(_children) {
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (_self) {
-              return React.createElement("div", undefined, React.createElement("ul", undefined, $$Array.of_list(Belt_List.map(Data$ReactTemplate.places, (function (place) {
-                                        return React.createElement("li", {
-                                                    key: place[/* id */0]
-                                                  }, place[/* name */1]);
-                                      })))));
+              return React.createElement("div", undefined, React.createElement("ul", undefined, Belt_Array.map($$Array.of_list(Data$ReactTemplate.places), (function (place) {
+                                    var match = place[/* image */3][/* attributionUrl */2];
+                                    return React.createElement("li", {
+                                                key: place[/* id */0]
+                                              }, React.createElement("div", undefined, place[/* name */1]), React.createElement("img", {
+                                                    alt: place[/* name */1],
+                                                    src: place[/* image */3][/* url */0]
+                                                  }), match !== undefined ? React.createElement("a", {
+                                                      href: match
+                                                    }, place[/* image */3][/* attribution */1]) : React.createElement("p", undefined, place[/* image */3][/* attribution */1]), ReasonReact.element(undefined, undefined, Phone$ReactTemplate.make(place[/* phone */5], /* array */[])));
+                                  }))));
             }),
           /* initialState */component[/* initialState */10],
           /* retainedProps */component[/* retainedProps */11],
