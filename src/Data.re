@@ -78,7 +78,7 @@ let names = places |> List.map(place => place.name) |> Array.of_list;
 
 let search = term =>
   switch (term) {
-  | "" => places
+  | "" => places |> Array.of_list
   | _ =>
     List.filter(
       place =>
@@ -88,8 +88,9 @@ let search = term =>
         ),
       places,
     )
+    |> Array.of_list
   };
 
 Js.log(names);
 Js.log(search("the"));
-/* unhandled: Js.log(search("invalid")); */
+Js.log(search("this does not exist"));
