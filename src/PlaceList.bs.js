@@ -8,8 +8,8 @@ var ReasonReact = require("reason-react/src/ReasonReact.js");
 
 var component = ReasonReact.statelessComponent("PlaceList");
 
-function s(text) {
-  return text;
+function s(prim) {
+  return prim;
 }
 
 function make(places, _children) {

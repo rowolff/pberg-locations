@@ -1,6 +1,6 @@
 let component = ReasonReact.statelessComponent("PlaceList");
 
-let s = text => ReasonReact.string(text);
+let s = ReasonReact.string;
 
 let make = (~places: list(Data.place), _children) => {
   ...component,
