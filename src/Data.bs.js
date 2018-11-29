@@ -14,7 +14,7 @@ var places = /* :: */[
       /* attribution */"HERMAN",
       /* attributionUrl */"https://www.facebook.com/bravebelgians"
     ],
-    /* address */"Sch\xc3\xb6nhauser Allee 173, 10119 Berlin",
+    /* address */"Schönhauser Allee 173, 10119 Berlin",
     /* phone */undefined,
     /* email */undefined,
     /* coordinates : record */[
@@ -29,10 +29,10 @@ var places = /* :: */[
       /* description */"Best bar to hang out after work",
       /* image : record */[
         /* url */"https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/557199_350331171685098_278284137_n.jpg?_nc_cat=108&_nc_ht=scontent-frt3-2.xx&oh=8d5c3c5894f59ecdaae69fec94377e24&oe=5CAB6460",
-        /* attribution */"Caf\xc3\xa9 Liebling",
+        /* attribution */"Café Liebling",
         /* attributionUrl */undefined
       ],
-      /* address */"Raumerstra\xc3\x9fe 36A, 10437 Berlin",
+      /* address */"Raumerstraße 36A, 10437 Berlin",
       /* phone */"030 41198209",
       /* email */undefined,
       /* coordinates : record */[
