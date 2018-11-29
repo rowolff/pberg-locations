@@ -5,6 +5,7 @@ var $$Array = require("bs-platform/lib/js/array.js");
 var React = require("react");
 var Belt_List = require("bs-platform/lib/js/belt_List.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
+var Data$ReactTemplate = require("./Data.bs.js");
 
 var component = ReasonReact.statelessComponent("PlaceList");
 
@@ -12,7 +13,7 @@ function s(prim) {
   return prim;
 }
 
-function make(places, _children) {
+function make(_children) {
   return /* record */[
           /* debugName */component[/* debugName */0],
           /* reactClassInternal */component[/* reactClassInternal */1],
@@ -24,8 +25,10 @@ function make(places, _children) {
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (_self) {
-              return React.createElement("div", undefined, React.createElement("ul", undefined, $$Array.of_list(Belt_List.map(places, (function (place) {
-                                        return React.createElement("li", undefined, place[/* name */1]);
+              return React.createElement("div", undefined, React.createElement("ul", undefined, $$Array.of_list(Belt_List.map(Data$ReactTemplate.places, (function (place) {
+                                        return React.createElement("li", {
+                                                    key: place[/* id */0]
+                                                  }, place[/* name */1]);
                                       })))));
             }),
           /* initialState */component[/* initialState */10],

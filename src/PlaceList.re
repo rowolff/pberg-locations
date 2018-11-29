@@ -2,17 +2,16 @@ let component = ReasonReact.statelessComponent("PlaceList");
 
 let s = ReasonReact.string;
 
-let make = (~places: list(Data.place), _children) => {
+let make = _children => {
   ...component,
   render: _self =>
     <div>
       <ul>
         {
-          ReasonReact.array(
-            Array.of_list(
-              Belt.List.map(places, place => <li> {s(place.name)} </li>),
-            ),
-          )
+          Data.places
+          ->Belt.List.map(place => <li key={place.id}> place.name->s </li>)
+          ->Array.of_list
+          ->ReasonReact.array
         }
       </ul>
     </div>,

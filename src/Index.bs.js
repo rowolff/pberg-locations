@@ -3,9 +3,8 @@
 
 var ReactDOMRe = require("reason-react/src/ReactDOMRe.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
-var Data$ReactTemplate = require("./Data.bs.js");
 var PlaceList$ReactTemplate = require("./PlaceList.bs.js");
 
-ReactDOMRe.renderToElementWithId(ReasonReact.element(undefined, undefined, PlaceList$ReactTemplate.make(Data$ReactTemplate.places, /* array */[])), "root");
+ReactDOMRe.renderToElementWithId(ReasonReact.element(undefined, undefined, PlaceList$ReactTemplate.make(/* array */[])), "root");
 
 /*  Not a pure module */

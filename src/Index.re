@@ -1,1 +1,1 @@
-ReactDOMRe.renderToElementWithId(<PlaceList places=Data.places />, "root");
+ReactDOMRe.renderToElementWithId(<PlaceList />, "root");
