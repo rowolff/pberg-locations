@@ -76,8 +76,12 @@ let places = [
 
 let names = places |> List.map(place => place.name) |> Array.of_list;
 
-let search = term => List.find(place => place.name == term, places);
+let search = term =>
+  switch (term) {
+  | "" => places |> Array.of_list
+  | _ => [List.find(place => place.name == term, places)] |> Array.of_list
+  };
 
-let output = search("The Bird");
-
-Js.log(output);
+Js.log(search(""));
+Js.log(search("The Bird"));
+/* unhandled: Js.log(search("invalid")); */

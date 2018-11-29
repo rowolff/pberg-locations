@@ -68,17 +68,23 @@ var names = $$Array.of_list(List.map((function (place) {
           }), places));
 
 function search(term) {
-  return List.find((function (place) {
-                return place[/* name */1] === term;
-              }), places);
+  if (term === "") {
+    return $$Array.of_list(places);
+  } else {
+    return $$Array.of_list(/* :: */[
+                List.find((function (place) {
+                        return place[/* name */1] === term;
+                      }), places),
+                /* [] */0
+              ]);
+  }
 }
 
-var output = search("The Bird");
+console.log(search(""));
 
-console.log(output);
+console.log(search("The Bird"));
 
 exports.places = places;
 exports.names = names;
 exports.search = search;
-exports.output = output;
 /* names Not a pure module */
