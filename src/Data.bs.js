@@ -3,6 +3,7 @@
 
 var List = require("bs-platform/lib/js/list.js");
 var $$Array = require("bs-platform/lib/js/array.js");
+var $$String = require("bs-platform/lib/js/string.js");
 
 var places = /* :: */[
   /* record */[
@@ -73,16 +74,14 @@ function search(term) {
   } else {
     return $$Array.of_list(/* :: */[
                 List.find((function (place) {
-                        return place[/* name */1] === term;
+                        return $$String.lowercase(place[/* name */1]).includes($$String.lowercase(term));
                       }), places),
                 /* [] */0
               ]);
   }
 }
 
-console.log(search(""));
-
-console.log(search("The Bird"));
+console.log(search("BIRD"));
 
 exports.places = places;
 exports.names = names;

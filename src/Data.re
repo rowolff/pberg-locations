@@ -79,9 +79,19 @@ let names = places |> List.map(place => place.name) |> Array.of_list;
 let search = term =>
   switch (term) {
   | "" => places |> Array.of_list
-  | _ => [List.find(place => place.name == term, places)] |> Array.of_list
+  | _ =>
+    [
+      List.find(
+        place =>
+          Js.String.includes(
+            term |> String.lowercase,
+            place.name |> String.lowercase,
+          ),
+        places,
+      ),
+    ]
+    |> Array.of_list
   };
 
-Js.log(search(""));
-Js.log(search("The Bird"));
+Js.log(search("BIRD"));
 /* unhandled: Js.log(search("invalid")); */
