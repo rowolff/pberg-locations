@@ -68,21 +68,17 @@ var names = $$Array.of_list(List.map((function (place) {
             return place[/* name */1];
           }), places));
 
-function search(term) {
-  if (term === "") {
-    return $$Array.of_list(places);
-  } else {
-    return $$Array.of_list(List.filter((function (place) {
-                        return $$String.lowercase(place[/* name */1]).includes($$String.lowercase(term));
-                      }))(places));
-  }
+function search(places, term) {
+  return List.filter((function (place) {
+                  return $$String.lowercase(place[/* name */1]).includes($$String.lowercase(term));
+                }))(places);
 }
 
 console.log(names);
 
-console.log(search("the"));
+console.log(search(places, "the"));
 
-console.log(search("this does not exist"));
+console.log(search(places, "this does not exist"));
 
 exports.places = places;
 exports.names = names;

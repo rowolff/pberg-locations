@@ -74,23 +74,18 @@ let places = [
   },
 ];
 
-let names = places |> List.map(place => place.name) |> Array.of_list;
+let names = List.map(place => place.name, places) |> Array.of_list;
 
-let search = term =>
-  switch (term) {
-  | "" => places |> Array.of_list
-  | _ =>
-    List.filter(
-      place =>
-        Js.String.includes(
-          term |> String.lowercase,
-          place.name |> String.lowercase,
-        ),
-      places,
-    )
-    |> Array.of_list
-  };
+let search = (places, term) =>
+  List.filter(
+    place =>
+      Js.String.includes(
+        term->String.lowercase,
+        place.name->String.lowercase,
+      ),
+    places,
+  );
 
 Js.log(names);
-Js.log(search("the"));
-Js.log(search("this does not exist"));
+Js.log(search(places, "the"));
+Js.log(search(places, "this does not exist"));
