@@ -40,7 +40,7 @@ let places = [
   },
   {
     id: "323e5faf-c52b-4651-8329-94157958102e",
-    name: {j|Café Liebling|j},
+    name: {j|The Café Liebling|j},
     description: {j|Best bar to hang out after work|j},
     image: {
       url: "https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/557199_350331171685098_278284137_n.jpg?_nc_cat=108&_nc_ht=scontent-frt3-2.xx&oh=8d5c3c5894f59ecdaae69fec94377e24&oe=5CAB6460",
@@ -78,20 +78,18 @@ let names = places |> List.map(place => place.name) |> Array.of_list;
 
 let search = term =>
   switch (term) {
-  | "" => places |> Array.of_list
+  | "" => places
   | _ =>
-    [
-      List.find(
-        place =>
-          Js.String.includes(
-            term |> String.lowercase,
-            place.name |> String.lowercase,
-          ),
-        places,
-      ),
-    ]
-    |> Array.of_list
+    List.filter(
+      place =>
+        Js.String.includes(
+          term |> String.lowercase,
+          place.name |> String.lowercase,
+        ),
+      places,
+    )
   };
 
-Js.log(search("BIRD"));
+Js.log(names);
+Js.log(search("the"));
 /* unhandled: Js.log(search("invalid")); */

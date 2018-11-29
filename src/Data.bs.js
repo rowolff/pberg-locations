@@ -26,7 +26,7 @@ var places = /* :: */[
   /* :: */[
     /* record */[
       /* id */"323e5faf-c52b-4651-8329-94157958102e",
-      /* name */"Café Liebling",
+      /* name */"The Café Liebling",
       /* description */"Best bar to hang out after work",
       /* image : record */[
         /* url */"https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/557199_350331171685098_278284137_n.jpg?_nc_cat=108&_nc_ht=scontent-frt3-2.xx&oh=8d5c3c5894f59ecdaae69fec94377e24&oe=5CAB6460",
@@ -70,18 +70,17 @@ var names = $$Array.of_list(List.map((function (place) {
 
 function search(term) {
   if (term === "") {
-    return $$Array.of_list(places);
+    return places;
   } else {
-    return $$Array.of_list(/* :: */[
-                List.find((function (place) {
-                        return $$String.lowercase(place[/* name */1]).includes($$String.lowercase(term));
-                      }), places),
-                /* [] */0
-              ]);
+    return List.filter((function (place) {
+                    return $$String.lowercase(place[/* name */1]).includes($$String.lowercase(term));
+                  }))(places);
   }
 }
 
-console.log(search("BIRD"));
+console.log(names);
+
+console.log(search("the"));
 
 exports.places = places;
 exports.names = names;
